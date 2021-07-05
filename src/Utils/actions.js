@@ -1,0 +1,6 @@
+export const ACTIONS = {
+  CLEAN: 'CLEAN',
+  POSTING: 'POSTING',
+  POST_ERROR: 'POST_ERROR',
+  POST_SUCCESS: 'POST_SUCCESS',
+};
