@@ -87,17 +87,10 @@ const validations = ['required'];
 const Form = () => {
   const {state, dispatch} = useStore();
   const [formValue, setFormValue] = useState(resetForm);
-  const [errorFields, setErrorFields] = useState([]);
 
   const handleChange = (name, value) => setFormValue(
       {...formValue, [name]: value},
   );
-
-  const handlePost = async (values) => {
-    dispatch({type: ACTIONS.POSTING});
-    const payload = await API_CALLS.POST_FORM(url, values);
-    dispatch(payload);
-  };
 
   const handleReset = () => setFormValue(resetForm);
 
@@ -199,28 +192,28 @@ const Form = () => {
           <CheckBox
               label="Advances"
               name={ fields.ADVANCES }
-              onChange={ handleChange }
+              onClick={ handleChange }
               required={ true }
               value={ formValue.advances }
           />
           <CheckBox
               label="Alerts"
-              name={fields.ALERTS}
-              onChange={handleChange}
-              required={true}
-              value={formValue.alerts}
+              name={ fields.ALERTS }
+              onClick={ handleChange }
+              required={ true }
+              value={ formValue.alerts }
           />
           <CheckBox
               label="Other Comunications"
-              name={fields.OTHERS}
-              onChange={handleChange}
-              required={false}
-              value={formValue.others}
+              name={ fields.OTHERS }
+              onClick={ handleChange }
+              required={ false }
+              value={ formValue.others }
           />
         </form>
         <div className="buttonSection">
-          <button className="btnSubmit" onClick={handleSubmit}>SUBMIT</button>
-          <button className="btnReset" onClick={handleReset}>RESET</button>
+          <button className="btnSubmit" onClick={ handleSubmit }>SUBMIT</button>
+          <button className="btnReset" onClick={ handleReset }>RESET</button>
         </div>
       </div>
   );
