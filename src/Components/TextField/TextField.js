@@ -17,7 +17,7 @@ const validation = (validator, value) => {
 const classNamesField = {
   Field: style.textField,
   Focus: style.textFocus,
-  Error:style.textError,
+  Error: style.textError,
 }
 
 const TextField = props => {
@@ -104,7 +104,7 @@ const TextField = props => {
           <label>{ props.label }</label>
         </div>
         <input
-            className={ shouldDisplayError ? "error" : classInput }
+            className={ errorMessage !== "" ? "error" : classInput }
             name={ props.name }
             onBlur={ onBlur }
             onChange={ e => handleChange(props.name, e.target.value) }
