@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "miragejs": "^0.1.41",
     "node-sass": "^6.0.1",
     "sass-loader": "^12.0.1"
   }

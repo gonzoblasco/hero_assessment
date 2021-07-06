@@ -1,4 +1,5 @@
 import './App.scss';
+import Form from '../Form/Form';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
         <h1 className="AppHeader-title">Sign Up for Email Updates</h1>
         <p className="AppHeader-subtitle">* Indicates Required Field</p>
       </header>
+      <Form />
     </div>
   );
 }

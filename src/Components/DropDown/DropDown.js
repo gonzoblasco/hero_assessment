@@ -33,7 +33,7 @@ const DropDown = props => {
       <div className="DropDown">
         <span className="Error">{ error.msg }</span>
         <label className="label">{ props.label }</label>
-        <div className="SelectCointainer">
+        <div className="SelectContainer">
           <button
               className={ error.value ? 'SelectError' : 'Select' }
               ref={ ref }
