@@ -2,16 +2,16 @@ import {useEffect, useState} from 'react';
 import './CheckBox.scss';
 import checkmark from '../../Assets/check.svg';
 
-const CheckBox = props => {
-  const [checked, setChecked] = useState(props.value);
+const CheckBox = ({label, name, onChange, required, value}) => {
+  const [checked, setChecked] = useState(value);
   const [errorMessage, setErrorMessage] = useState();
   const [error, setError] = useState(false);
 
   const handleValidation = value => {
-    if (!props.required || (props.required && value)) {
+    if (!required || (required && value)) {
       setError(false);
       setErrorMessage('');
-    } else if (props.required) {
+    } else if (required) {
       setError(true);
       setErrorMessage('This value is required');
     }
@@ -20,13 +20,13 @@ const CheckBox = props => {
   const handleClick = () => {
     setChecked(!checked);
     handleValidation(!checked);
-    props.onChange(props.name, !checked);
+    onChange(name, !checked);
   };
 
   useEffect(() => {
-    handleValidation(props.value);
-    setChecked(props.value);
-  }, [props.value]);
+    handleValidation(value);
+    setChecked(value);
+  }, [value]);
 
   return (
       <div className="checkBox">
@@ -40,7 +40,7 @@ const CheckBox = props => {
             { checked &&
             <img src={ checkmark } alt="checkbox" className="imgCheck" /> }
           </div>
-          <label className="label">{ props.label }</label>
+          <label className="label">{ label }</label>
         </button>
       </div>
   );

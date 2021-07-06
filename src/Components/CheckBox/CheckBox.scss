@@ -20,15 +20,12 @@
   width: 25px;
 }
 
-.unchecked {
-  background-color: #fdfdfd;
-  border-color: #cfe7e5;
-  border-style: solid;
-  border-width: 4px;
-  height: 25px;
-  margin-right: 20px;
-  padding: 2px;
-  width: 25px;
+.error{
+  color: #ee4266;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .errorCheck {
@@ -43,14 +40,6 @@
   filter: brightness(0) invert(1)
 }
 
-.error{
-  color: #ee4266;
-  font-family: 'Open Sans';
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
 .label{
   color: #404040;
   font-family: 'Open Sans';
@@ -61,4 +50,13 @@
   text-align: left;
 }
 
-
+.unchecked {
+  background-color: #fdfdfd;
+  border-color: #cfe7e5;
+  border-style: solid;
+  border-width: 4px;
+  height: 25px;
+  margin-right: 20px;
+  padding: 2px;
+  width: 25px;
+}

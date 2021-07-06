@@ -17,8 +17,102 @@ const validation = (validator, value) => {
 const classNamesField = {
   Field: style.textField,
   Focus: style.textFocus,
-  Error: style.textError,
-};
+  Error:style.textError,
+}
+
+// const TextField = (props) => {
+//   const [value, setValue] = useState(props.value);
+//   const [errorMessage, setErrorMessage] = useState('');
+// //   const [errorMessage, setErrorMessage] = useState('');
+//   const [isTouchedOnce, setTouchedOnce] = useState(null);
+// //   const [isTouchedOnce, setTouchedOnce] = useState(null);
+//   const [isBlurred, setBlurred] = useState(false);
+// //   const [isBlurred, setBlurred] = useState(false);
+//   const [classInput, setClassInput] = useState(classNamesField.Field);
+// //   const [classInput, setClassInput] = useState(classNamesField.Field);
+//
+//   const runValidations = (value) => {
+//     if (!isTouchedOnce) return;
+//     let validationRes;
+//     for (let i = 0; i < props.validations.length; i++) {
+//       const validator = props.validations[i];
+//       if (typeof validator === "string")
+//         validationRes = validation(validator,value);
+//       if(validationRes.length > 1 ){
+//         setErrorMsg(validationRes);
+//         setClassInput(classNamesField.Error)
+//       }else{
+//         setErrorMsg('');
+//         setClassInput(classNamesField.Field)
+//       }
+//       if (validationRes) break;
+//     }
+//
+//   };
+//
+//
+//   const handleChange = (name,currentValue) => {
+//     setValue(currentValue);
+//     runValidations(currentValue);
+//     props.onChange(name,currentValue);
+//   };
+//
+//   const onFocus = () => {
+//     setTouchedOnce(true);
+//     setClassInput(classNamesField.Focus)
+//     setBlurred(false);
+//   };
+//
+//   const onBlur = event => {
+//     const {name} = event.target;
+//     const currentValue = event.target.value;
+//     runValidations(currentValue);
+//     setBlurred(true);
+//     if(errorMsg.length > 0){
+//       setClassInput(classNamesField.Error)
+//     }else{
+//       setClassInput(classNamesField.Field)
+//     }
+//
+//     props.onChange(name,currentValue);
+//   };
+//
+//
+//   useEffect(()=>{
+//     if(props.value === null){
+//       setErrorMsg('This value is required');
+//       setClassInput(classNamesField.Error)
+//     }
+//     if(props.value === ''){
+//       setErrorMsg('');
+//       setValue('')
+//       setClassInput(classNamesField.Field)
+//     }
+//
+//   },[props.value]);
+//
+//   const shouldDisplayError = errorMsg || isTouchedOnce && isBlurred;
+//   return (
+//       <div key={props.name} className={style.formField}>
+//         <div className={style.errorSection}>
+//           {shouldDisplayError && <span className={style.textError}>{errorMessage}</span>}
+//         </div>
+//         <div className={style.labelSection}>
+//           <label>{props.label}</label>
+//         </div>
+//         <input
+//             className={classInput}
+//             type={props.type || "text"}
+//             value={value}
+//             name={props.name}
+//             onChange={(e)=>handleChange(props.name, e.target.value )}
+//             placeholder={props.placeholder}
+//             onFocus={onFocus}
+//             onBlur={onBlur}
+//         />
+//       </div>
+//   );
+// }
 
 const TextField = props => {
   const [value, setValue] = useState(props.value);
@@ -92,19 +186,19 @@ const TextField = props => {
     }
   }, [props.value]);
 
-  const shouldDisplayError = errorMessage || (isTouchedOnce && isBlurred);
+  const shouldDisplayError = errorMessage || isTouchedOnce && isBlurred;
 
   return (
-      <div key={ props.name } className={ style.formField }>
-        <div className={ style.errorSection }>
+      <div key={ props.name } className="formField">
+        <div className="errorSection">
           { shouldDisplayError &&
-          <span className={ style.errorMessage }>{ errorMessage }</span> }
+          <span className="errorText">{ errorMessage }</span> }
         </div>
-        <div className={ style.labelSection }>
+        <div className="labelSection">
           <label>{ props.label }</label>
         </div>
         <input
-            className={ classInput }
+            className={ shouldDisplayError ? "error" : classInput }
             name={ props.name }
             onBlur={ onBlur }
             onChange={ e => handleChange(props.name, e.target.value) }

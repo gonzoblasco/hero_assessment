@@ -1,11 +1,22 @@
 import {useState} from 'react';
 import './Form.scss';
-import API_CALLS from '../../Components/API_CALLS/API_CALLS';
+import API_CALLS from '../../Utils/apiCalls';
 import CheckBox from '../../Components/CheckBox/CheckBox';
 import DropDown from '../../Components/DropDown/DropDown';
 import TextField from '../../Components/TextField/TextField';
 import {ACTIONS} from '../../Utils/actions';
 import {useStore} from '../../Utils/store';
+
+const fields = {
+  ADVANCES: 'advances',
+  ALERTS: 'alerts',
+  EMAIL: 'email',
+  FIRST_NAME: 'firstName',
+  LAST_NAME: 'lastName',
+  ORGANIZATION: 'organization',
+  OTHERS: 'others',
+  RESIDENT: 'resident',
+};
 
 const config = [
   {
@@ -46,17 +57,6 @@ const config = [
 ];
 
 const emailValidations = ['required', 'email'];
-
-const fields = {
-  ADVANCES: 'advances',
-  ALERTS: 'alerts',
-  EMAIL: 'email',
-  FIRST_NAME: 'firstName',
-  LAST_NAME: 'lastName',
-  ORGANIZATION: 'organization',
-  OTHERS: 'others',
-  RESIDENT: 'resident',
-};
 
 const resetForm = {
   advances: true,
