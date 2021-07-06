@@ -9,13 +9,15 @@
 
 .errorText {
   color: #ee4266;
+  font-style: italic;
+  line-height: 3;
 }
 
 .formField {
   align-items: start;
   display: flex;
   flex-direction: column;
-  height: 110px;
+  height: 125px;
   justify-content: flex-end;
   width: 100%;
 
@@ -49,7 +51,8 @@
   font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 1px;
-  margin: 0;
+  letter-spacing: .15rem;
+  margin: 0 0 .5rem 0;
   text-align: left;
+  text-transform: uppercase;
 }

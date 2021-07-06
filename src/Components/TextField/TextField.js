@@ -18,7 +18,7 @@ const classNamesField = {
   Field: style.textField,
   Focus: style.textFocus,
   Error: style.textError,
-}
+};
 
 const TextField = props => {
   const [value, setValue] = useState(props.value);
@@ -101,10 +101,10 @@ const TextField = props => {
           <span className="errorText">{ errorMessage }</span> }
         </div>
         <div className="labelSection">
-          <label>{ props.label }</label>
+          <label>{ props.label }*</label>
         </div>
         <input
-            className={ errorMessage !== "" ? "error" : classInput }
+            className={ errorMessage !== '' ? 'error' : classInput }
             name={ props.name }
             onBlur={ onBlur }
             onChange={ e => handleChange(props.name, e.target.value) }

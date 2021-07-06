@@ -32,7 +32,7 @@ const DropDown = ({label, name, onChange, options, value}) => {
   return (
       <div className="DropDown">
         <span className="Error">{ error.msg }</span>
-        <label className="label">{ label }</label>
+        <label className="Label">{ label }</label>
         <div className="SelectContainer">
           <div
               className={ error.value ? 'SelectError' : 'Select' }

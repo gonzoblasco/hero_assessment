@@ -1,11 +1,9 @@
 .page{
-  display:flex;
-  flex-direction: column;
   width: 100%;
 }
 .form{
   display:grid;
-  column-gap: 48px;
+  column-gap: 30px;
   grid-template-columns: 1fr 1fr;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;

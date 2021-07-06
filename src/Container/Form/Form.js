@@ -181,7 +181,7 @@ const Form = () => {
               value={ formValue.organization }
           />
           <DropDown
-              label="Resident"
+              label="US Resident"
               name={ fields.RESIDENT }
               onChange={ handleChange }
               options={ residentOptions }
